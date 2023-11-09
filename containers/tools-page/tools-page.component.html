@@ -1,0 +1,15 @@
+<div fxLayout="column" fxFill>
+  <h2>Tools</h2>
+  <mat-card fxFlex>
+    <!--mat-card-title>Tools</mat-card-title>
+    <mat-card-content>
+      <ul>
+        <li *ngFor="let item of ['Hund','Katze','Maus','Hamster']">{{item}}</li>
+      </ul> -->
+    <app-matrix
+      value="matrixData"
+      config="matrixConfig"
+      (eventOut)="handler($event)"></app-matrix>
+    <!-- </mat-card-content-->
+  </mat-card>
+</div>

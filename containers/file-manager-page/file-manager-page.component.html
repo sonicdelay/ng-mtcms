@@ -1,0 +1,70 @@
+<div fxLayout="row" fxFlex>
+  <div fxFlex="25">
+    Files
+    <!-- <app-tree></app-tree> -->
+  </div>
+
+  <div
+    fxFlex
+    fxLayout="column"
+    style="overflow: auto; background-color: #c0c0c0"
+    cla_ss="card-deck-container">
+    <p>{{ currentPath }}</p>
+    <ng-container *ngFor="let item of items">
+      <!-- *ngIf="item.path!='' && item.name!='.'"  -->
+      <div (click)="clickHandler(item)">
+        <input name="selection[]" type="checkbox" [value]="item.name" /><span>{{
+          item.name
+        }}</span>
+      </div>
+
+      <!-- <mat-card (click)="clickHandler(item)" class="card-item" [ngClass]="item.type=='file' ? 'file' : 'folder'"
+        title="{{item|json}}">
+        <mat-card-title>
+          Item
+          </mat-card-title>
+          <mat-icon *ngIf="item.type=='file'">text_snippet</mat-icon>
+          <mat-icon *ngIf="item.type=='dir'">folder_open</mat-icon>
+          <mat-card-content>
+            <input name="selection[]" type="checkbox">
+            {{item.name}}
+          </mat-card-content>
+      </mat-card> -->
+    </ng-container>
+  </div>
+  <div fxLayout="column">
+    <button (click)="handler({ type: 'editFile' })" class="btn">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button (click)="handler({ type: 'deleteEntry' })" class="btn">
+      <mat-icon>delete_outline</mat-icon>
+    </button>
+    <button (click)="handler({ type: 'makeDir' })" class="btn">
+      <mat-icon>create_new_folder</mat-icon>
+    </button>
+    <button (click)="handler({ type: 'createFile' })" class="btn">
+      <mat-icon>note_add</mat-icon>
+    </button>
+    <button (click)="handler({ type: 'renameEntry' })" class="btn">
+      <mat-icon>drive_file_rename_outline</mat-icon>
+    </button>
+    <button class="btn">
+      <label for="upload" class="button">
+        <mat-icon>cloud_upload</mat-icon>
+      </label>
+      <input
+        id="upload"
+        name="upload"
+        type="file"
+        (change)="handler({ type: 'upload' })"
+        multiple
+        style="display: none" />
+    </button>
+    <!-- <button (click)="handler({'type':''})" class="btn">
+      <mat-icon>text_snippet</mat-icon>
+    </button>
+    <button (click)="handler({'type':''})" class="btn">
+      <mat-icon>text_snippet</mat-icon>
+    </button> -->
+  </div>
+</div>

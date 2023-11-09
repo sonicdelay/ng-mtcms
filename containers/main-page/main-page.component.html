@@ -1,0 +1,38 @@
+<div id="mtcms-main" fxLayout="column" fxFlexFill>
+  <mat-toolbar>
+    <button mat-icon-button (click)="start.open('mouse')">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div fxLayout="row" fxFlex style="line-height: 40px; height: 40px">
+      <h1 style="line-height: 40px; height: 40px">mtCMS</h1>
+      <div fxFlex></div>
+      <button mat-icon-button (click)="toggleFullscreen()">
+        <mat-icon>fullscreen</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlex>
+    <mat-sidenav #start>
+      <mat-nav-list>
+        <a
+          *ngFor="let navItem of navItems"
+          mat-list-item
+          (click)="start.close()"
+          routerLinkActive
+          #routerLinkActiveInstance="routerLinkActive"
+          [attr.tabindex]="routerLinkActiveInstance.isActive ? 0 : -1"
+          [routerLink]="[navItem.route]">
+          {{ navItem.name }}
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div fxLayout="row" fxFill>
+        <div fxFlex>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
