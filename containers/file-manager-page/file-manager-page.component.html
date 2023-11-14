@@ -1,21 +1,16 @@
 <div fxLayout="row" fxFlex>
-  <div fxFlex="25">
+  <div fxFlex=25>
     Files
     <!-- <app-tree></app-tree> -->
+
   </div>
 
-  <div
-    fxFlex
-    fxLayout="column"
-    style="overflow: auto; background-color: #c0c0c0"
-    cla_ss="card-deck-container">
-    <p>{{ currentPath }}</p>
+  <div fxFlex fxLayout="column" style="overflow:auto;background-color:#C0C0C0" cla_ss="card-deck-container">
+    <p>{{currentPath}}</p>
     <ng-container *ngFor="let item of items">
       <!-- *ngIf="item.path!='' && item.name!='.'"  -->
       <div (click)="clickHandler(item)">
-        <input name="selection[]" type="checkbox" [value]="item.name" /><span>{{
-          item.name
-        }}</span>
+        <input name="selection[]" type="checkbox" [value]="item.name"><span>{{item.name}}</span>
       </div>
 
       <!-- <mat-card (click)="clickHandler(item)" class="card-item" [ngClass]="item.type=='file' ? 'file' : 'folder'"
@@ -30,35 +25,32 @@
             {{item.name}}
           </mat-card-content>
       </mat-card> -->
+
     </ng-container>
+
   </div>
   <div fxLayout="column">
-    <button (click)="handler({ type: 'editFile' })" class="btn">
+    <button (click)="handler({'type':'editFile'})" class="btn">
       <mat-icon>edit</mat-icon>
     </button>
-    <button (click)="handler({ type: 'deleteEntry' })" class="btn">
+    <button (click)="handler({'type':'deleteEntry'})" class="btn">
       <mat-icon>delete_outline</mat-icon>
     </button>
-    <button (click)="handler({ type: 'makeDir' })" class="btn">
+    <button (click)="handler({'type':'makeDir'})" class="btn">
       <mat-icon>create_new_folder</mat-icon>
     </button>
-    <button (click)="handler({ type: 'createFile' })" class="btn">
+    <button (click)="handler({'type':'createFile'})" class="btn">
       <mat-icon>note_add</mat-icon>
     </button>
-    <button (click)="handler({ type: 'renameEntry' })" class="btn">
+    <button (click)="handler({'type':'renameEntry'})" class="btn">
       <mat-icon>drive_file_rename_outline</mat-icon>
     </button>
     <button class="btn">
       <label for="upload" class="button">
         <mat-icon>cloud_upload</mat-icon>
       </label>
-      <input
-        id="upload"
-        name="upload"
-        type="file"
-        (change)="handler({ type: 'upload' })"
-        multiple
-        style="display: none" />
+      <input id="upload" name="upload" type="file" (change)="handler({'type':'upload'})" multiple
+        style="display:none;" />
     </button>
     <!-- <button (click)="handler({'type':''})" class="btn">
       <mat-icon>text_snippet</mat-icon>
@@ -66,5 +58,6 @@
     <button (click)="handler({'type':''})" class="btn">
       <mat-icon>text_snippet</mat-icon>
     </button> -->
+
   </div>
 </div>

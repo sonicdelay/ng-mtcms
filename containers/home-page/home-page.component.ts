@@ -24,7 +24,7 @@ export class DynamicDatabase {
     ['System', ['Types', 'Orange', 'Banana']],
     ['Vegetables', ['Tomato', 'Potato', 'Onion']],
     ['Types', ['Fuji', 'Macintosh']],
-    ['Onion', ['Yellow', 'White', 'Purple']],
+    ['Onion', ['Yellow', 'White', 'Purple']]
   ]);
 
   rootLevelNodes: string[] = ['Maintree', 'Vegetables'];
@@ -139,7 +139,7 @@ export class DynamicDataSource {
   selector: 'home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
-  providers: [DynamicDatabase],
+  providers: [DynamicDatabase]
 })
 export class HomePageComponent implements OnInit {
   constructor(database: DynamicDatabase) {
@@ -166,7 +166,7 @@ export class HomePageComponent implements OnInit {
 
   hasChild = (_: number, _nodeData: DynamicFlatNode) => _nodeData.expandable;
 
-  treeSelect(event: Event) {
+  treeSelect(event:Event) {
     console.log(event);
   }
 }

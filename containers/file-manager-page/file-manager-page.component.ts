@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-// import { IconButtonComponent } from '@example/core-ui';
-import { ActionMessage } from '../../../shared/models/action-message.interface';
+// import { IconButtonComponent } from '@siemens/core-ui';
+import { ActionMessage } from 'src/app/shared/models/action-message.interface';
 import { BackendService } from '../../../shared/servcies/backend.service';
 
 @Component({
-  selector: 'file-manager-page',
+  selector: 'app-file-manager-page',
   templateUrl: './file-manager-page.component.html',
   styleUrls: ['./file-manager-page.component.scss'],
 })
@@ -48,6 +48,7 @@ export class FileManagerPageComponent implements OnInit {
   }
 
   ngOnDestroy() {
+    console.log('Destroy');
     //this.sub.unsubscribe();
   }
 

@@ -2,11 +2,13 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
-  selector: 'app-main-page',
+  selector: 'main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.scss'],
+  styleUrls: ['./main-page.component.scss']
 })
-export class MainPageComponent {
+export class MainPageComponent implements OnInit {
+
+
   dark = false;
   navItems = [
     { name: 'Home', route: './' },
@@ -15,16 +17,14 @@ export class MainPageComponent {
     { name: 'Tools', route: './tools' },
     // { name: 'Admin', route: './admin' },
     { name: '-----', route: '' },
-    { name: 'NgXs', route: '../ngxs' },
-    // { name: 'Engine', route: '../engine' },
+    { name: 'Engine', route: '../engine' },
     { name: '-----', route: '' },
     { name: 'Root', route: '/' },
   ];
 
   constructor(
     private element: ElementRef<HTMLElement>,
-    private overlayContainer: OverlayContainer
-  ) {}
+    private overlayContainer: OverlayContainer) { }
 
   toggleFullscreen() {
     // Cast to `any`, because the typings don't include the browser-prefixed methods.
@@ -39,4 +39,7 @@ export class MainPageComponent {
       elem.msRequestFullScreen();
     }
   }
+
+  ngOnInit() { }
+
 }

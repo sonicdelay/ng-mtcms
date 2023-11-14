@@ -1,14 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tools-page',
+  selector: 'tools-page',
   templateUrl: './tools-page.component.html',
-  styleUrls: ['./tools-page.component.scss'],
+  styleUrls: ['./tools-page.component.scss']
 })
-export class ToolsPageComponent {
-  public matrixData = [];
-  public matrixConfig = {};
-  constructor() {}
+export class ToolsPageComponent implements OnInit {
+  public matrixData = []
+  public matrixConfig = {
+
+  }
+  constructor() { }
+
+  ngOnInit() {
+
+
+  }
 
   handler(evt: any) {
     console.log();

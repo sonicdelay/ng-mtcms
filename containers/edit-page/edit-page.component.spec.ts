@@ -1,25 +1,25 @@
-// import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-// import { EditPageComponent } from './edit-page.component';
-// import { HttpClient, HttpHandler } from '@angular/common/http';
+import { EditPageComponent } from './edit-page.component';
 
-// describe('EditPageComponent', () => {
-//   let component: EditPageComponent;
-//   let fixture: ComponentFixture<EditPageComponent>;
+describe('EditPageComponent', () => {
+  let component: EditPageComponent;
+  let fixture: ComponentFixture<EditPageComponent>;
 
-//   beforeEach(waitForAsync(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [EditPageComponent],
-//     }).compileComponents();
-//   }));
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ EditPageComponent ]
+    })
+    .compileComponents();
+  }));
 
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(EditPageComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(EditPageComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

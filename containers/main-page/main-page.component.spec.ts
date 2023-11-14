@@ -8,8 +8,9 @@ describe('MainPageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [MainPageComponent],
-    }).compileComponents();
+      declarations: [ MainPageComponent ]
+    })
+    .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,6 +20,6 @@ describe('MainPageComponent', () => {
   });
 
   it('should create', () => {
-    expect(typeof component).to.be('component');
+    expect(component).toBeTruthy();
   });
 });

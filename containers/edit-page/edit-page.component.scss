@@ -1,22 +1,24 @@
 :host {
   button {
     margin: 0 !important;
-    padding: 5px;
+    padding:5px;
     min-width: 24px;
   }
 
   ul {
     // list-style-type: none;
+
   }
 
   li {
-    float: left;
-    padding: 3px;
+    float:left;
+    padding:3px;
   }
 
   .clearfix:after {
-    content: '';
+    content: "";
     display: table;
     clear: both;
   }
+
 }

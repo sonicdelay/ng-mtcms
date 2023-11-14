@@ -3,8 +3,8 @@
     <button mat-icon-button (click)="start.open('mouse')">
       <mat-icon>menu</mat-icon>
     </button>
-    <div fxLayout="row" fxFlex style="line-height: 40px; height: 40px">
-      <h1 style="line-height: 40px; height: 40px">mtCMS</h1>
+    <div fxLayout="row" fxFlex style="line-height: 40px; height: 40px;">
+      <h1 style="line-height: 40px; height: 40px;">mtCMS</h1>
       <div fxFlex></div>
       <button mat-icon-button (click)="toggleFullscreen()">
         <mat-icon>fullscreen</mat-icon>
@@ -15,13 +15,8 @@
   <mat-sidenav-container fxFlex>
     <mat-sidenav #start>
       <mat-nav-list>
-        <a
-          *ngFor="let navItem of navItems"
-          mat-list-item
-          (click)="start.close()"
-          routerLinkActive
-          #routerLinkActiveInstance="routerLinkActive"
-          [attr.tabindex]="routerLinkActiveInstance.isActive ? 0 : -1"
+        <a *ngFor="let navItem of navItems" mat-list-item (click)="start.close()" routerLinkActive
+          #routerLinkActiveInstance="routerLinkActive" [attr.tabindex]="routerLinkActiveInstance.isActive ? 0 : -1"
           [routerLink]="[navItem.route]">
           {{ navItem.name }}
         </a>
